@@ -12,6 +12,16 @@ error=$(tput setaf 160)
 warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
+name="$1"
+
+touch rep.txt
+
+echo "plugins: [
+                 'react-native-reanimated/plugin',
+             ]
+         };
+     };" > rep.txt
+
 #Logging template
 #echo "${info}INFO${reset}: This is an ${bold}info${reset} message"
 #echo "${error}ERROR${reset}: This is an ${underline}error${reset} message"
@@ -50,7 +60,8 @@ function drawer_navigation() {
   echo "${info}INFO${reset}: Installing ${bold}@react-navigation/drawer${reset}."
   npm install @react-navigation/drawer
   echo "${info}INFO${reset}: Installing ${bold}react-native-gesture-handler and react-native-reanimated${reset}."
-  expo install react-native-gesture-handler react-native-reanimated
+  expo install react-native-gesture-handler react-native-reanimated;
+
 }
 
 function others() {
@@ -67,7 +78,7 @@ if [[ (-z "$1" ) && ("$2" = "-full") ]]
   then
     echo "${error}ERROR${reset}: There were no ${bold} name ${reset} provided for the project."
   else
-    echo "${info}INFO${reset}: The project is gonna be created with the  ${bold}$1${reset} as the name";
+    echo "${info}INFO${reset}: The project is gonna be created with the ${bold}$1${reset} as the name";
     npx create-expo-app $1 --template blank-typescript -y
     mkdir $1/ || cd $1/;
     echo "${info}INFO${reset}: The project is gonna installed with ${bold}all${reset} the packages  ";
@@ -77,6 +88,16 @@ if [[ (-z "$1" ) && ("$2" = "-full") ]]
     tab_navigation
     drawer_navigation
     others
+    #DON'T CHANGE THIS TRUST ME IT LOOKS WEIRD BUT IT SHOULD WORK Edit : we are gonna see
+    cd ..;
+    truncate -s-7 $PWD/$name/babel.config.js;
+    cat $PWD/$name/babel.config.js rep.txt >> $PWD/$name/babel.config.js
+fi
+
+
+if [[ ("$1" = "--help") || ("$1" = "-h") ]]
+  then
+    echo "${error}ERROR${reset}: There were no ${bold} name ${reset} provided for the project."
 fi
 
 
