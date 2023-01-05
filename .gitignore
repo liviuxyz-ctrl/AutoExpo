@@ -1,0 +1,8 @@
+# ignore
+
+/**/node_modules/**/*.*
+/node_modules/**/*.*
+
+how to update git to see my new gitignore file?
+
+
