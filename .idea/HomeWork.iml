@@ -6,7 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/Test" />
+      <excludeFolder url="file://$MODULE_DIR$/myapp/node_modules" />
     </content>
+    <content url="file://$MODULE_DIR$/myapp/node_modules" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

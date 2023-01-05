@@ -61,7 +61,10 @@ function drawer_navigation() {
   npm install @react-navigation/drawer
   echo "${info}INFO${reset}: Installing ${bold}react-native-gesture-handler and react-native-reanimated${reset}."
   expo install react-native-gesture-handler react-native-reanimated;
-
+  #DON'T CHANGE THIS TRUST ME IT LOOKS WEIRD BUT IT SHOULD WORK Edit : it works :3
+  cd ..;
+  truncate -s-7 $PWD/$name/babel.config.js;
+  cat $PWD/$name/babel.config.js rep.txt >> $PWD/$name/babel.config.js
 }
 
 function others() {
@@ -88,10 +91,6 @@ if [[ (-z "$1" ) && ("$2" = "-full") ]]
     tab_navigation
     drawer_navigation
     others
-    #DON'T CHANGE THIS TRUST ME IT LOOKS WEIRD BUT IT SHOULD WORK Edit : we are gonna see
-    cd ..;
-    truncate -s-7 $PWD/$name/babel.config.js;
-    cat $PWD/$name/babel.config.js rep.txt >> $PWD/$name/babel.config.js
 fi
 
 
